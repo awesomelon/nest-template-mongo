@@ -5,7 +5,6 @@ import { DB_CONNECTION_KEY } from './consts';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
       connectionName: DB_CONNECTION_KEY,

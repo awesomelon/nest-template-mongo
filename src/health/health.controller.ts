@@ -10,7 +10,7 @@ import {
 } from '@nestjs/terminus';
 
 // config
-import { DB_CONNECTION_KEY } from 'src/db/consts';
+import { DB_CONNECTION_KEY } from 'src/database/consts';
 
 // lib
 import { Connection } from 'mongoose';
@@ -21,7 +21,7 @@ export class HealthController {
   constructor(
     private health: HealthCheckService,
     private mongooseHealth: MongooseHealthIndicator,
-    @InjectConnection(DB_CONNECTION_KEY) private connection: Connection,
+    @InjectConnection(DB_CONNECTION_KEY) private connection: Connection
   ) {}
 
   @Get()

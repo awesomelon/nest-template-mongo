@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { databaseProvider } from 'src/db/config.provider';
-import { DB_CONNECTION_KEY } from 'src/db/consts';
+import { databaseProvider } from 'src/database/config.provider';
+import { DB_CONNECTION_KEY } from 'src/database/consts';
 import { UserService } from './user.service';
 import { UserController } from './user.controller';
 import { BuiltInCacheModule } from 'src/cache/cache.module';

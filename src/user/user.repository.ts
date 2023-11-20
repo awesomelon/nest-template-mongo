@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { User, UserDocument } from './schema';
 import { FilterQuery, Model, UpdateQuery } from 'mongoose';
-import { DB_CONNECTION_KEY } from 'src/db/consts';
+import { DB_CONNECTION_KEY } from 'src/database/consts';
 import { RequestUserCreateDTO } from './dto';
 
 @Injectable()

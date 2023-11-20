@@ -1,6 +1,6 @@
 import { MiddlewareConsumer, Module, NestModule, ValidationPipe } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { DbConfigModule } from './db/config.module';
+import { DbConfigModule } from './database/config.module';
 import { UserModule } from './user/user.module';
 import { APP_FILTER, APP_PIPE } from '@nestjs/core';
 import { AllExceptionFilter } from './catch/error.handler';
