@@ -6,7 +6,7 @@ import * as winston from 'winston';
 import * as dayjs from 'dayjs';
 import { utilities as nestWinstonModuleUtilities } from 'nest-winston';
 
-const { errors, combine, timestamp, printf, colorize, prettyPrint } = winston.format;
+const { errors, combine, timestamp, printf } = winston.format;
 
 export class LoggerService implements LS {
   private logger: winston.Logger;

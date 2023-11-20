@@ -18,8 +18,7 @@ This boilerplate project combines the robustness of NestJS, the high performance
 
 ### Prerequisites
 
-- Node.js (v16.15.x or later)
-- MongoDB (v4.4 or later)
+- Node.js (v16.20.x or later)
 
 ### Installation
 
