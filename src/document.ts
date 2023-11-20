@@ -1,8 +1,6 @@
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
-// core
-
-export class BaseAPIDocumentation {
+export class APIDocumentation {
   public builder;
 
   constructor() {
@@ -11,7 +9,7 @@ export class BaseAPIDocumentation {
 
   initializeOptions() {
     return this.builder
-      .setTitle('NEST APIS')
+      .setTitle(process.env.npm_package_name)
       .setVersion(process.env.npm_package_version)
       .setDescription('NEST APIS')
       .addBearerAuth({

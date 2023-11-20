@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 import { AppModule } from './app.module';
-import { BaseAPIDocumentation } from './base.document';
+import { APIDocumentation } from './document';
 import { AllExceptionFilter } from './catch/error.handler';
 import { ValidationPipe } from '@nestjs/common';
 
@@ -22,7 +22,8 @@ async function bootstrap() {
     credentials: true,
   });
 
-  new BaseAPIDocumentation().setup(app);
+  const document = new APIDocumentation();
+  document.setup(app);
 
   app.register(helmet, {
     contentSecurityPolicy: {
