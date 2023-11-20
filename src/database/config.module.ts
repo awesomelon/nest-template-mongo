@@ -16,8 +16,6 @@ import { DB_CONNECTION_KEY } from './consts';
 
         return {
           uri: `mongodb://${DB_ID}:${DB_PWD}@${DB_URL}/${DB_NAME}`,
-          useNewUrlParser: true,
-          useUnifiedTopology: true,
           autoIndex: true,
         };
       },
