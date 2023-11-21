@@ -8,6 +8,7 @@ import { ValidationPipe } from '@nestjs/common';
 // lib
 import helmet from '@fastify/helmet';
 import whitelist from './whitelist';
+import fastifyCsrf from '@fastify/csrf-protection';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
@@ -25,7 +26,8 @@ async function bootstrap() {
   const document = new APIDocumentation();
   document.setup(app);
 
-  app.register(helmet, {
+  await app.register(fastifyCsrf);
+  await app.register(helmet, {
     contentSecurityPolicy: {
       directives: {
         defaultSrc: [`'self'`],
