@@ -3,13 +3,13 @@ import { Prop, Schema } from '@nestjs/mongoose';
 
 // lib
 import { IsDate, IsString } from 'class-validator';
-import { SchemaTypes } from 'mongoose';
+import { SchemaTypes, Types } from 'mongoose';
 
-@Schema({ versionKey: false })
+@Schema({ versionKey: false, timestamps: { createdAt: 'created', updatedAt: 'updated' } })
 export class CommonSchema {
-  @Prop({ required: false, type: SchemaTypes.String })
+  @Prop({ type: SchemaTypes.ObjectId })
   @IsString()
-  id: string;
+  _is: Types.ObjectId;
 
   @Prop({ type: SchemaTypes.Date })
   @IsDate()

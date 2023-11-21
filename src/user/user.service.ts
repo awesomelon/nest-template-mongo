@@ -21,7 +21,7 @@ export class UserService {
     return this.userRepository.updateOne({ _id }, { $set: data });
   }
 
-  async insert(user: RequestUserCreateDTO): Promise<{ id: string; email: string }> {
+  async insert(user: RequestUserCreateDTO): Promise<{ _id: string; email: string }> {
     const { email } = user;
     const isExists = await this.exists({ email });
 

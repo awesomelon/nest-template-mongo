@@ -53,8 +53,8 @@ export class UserRepository {
     return false;
   }
 
-  async insert(dto: RequestUserCreateDTO): Promise<{ id: string; email: string }> {
+  async insert(dto: RequestUserCreateDTO): Promise<{ _id: string; email: string }> {
     const newUser = await this.userModel.create(dto);
-    return { id: newUser._id.toString(), email: newUser.email };
+    return { _id: newUser._id.toString(), email: newUser.email };
   }
 }
