@@ -4,7 +4,9 @@ import { IsBoolean, IsEmail, IsString } from 'class-validator';
 import { SchemaTypes } from 'mongoose';
 import { CommonSchema } from 'src/common/schema';
 
-@Schema({ versionKey: false })
+@Schema({
+  versionKey: false,
+})
 export class User extends CommonSchema {
   @ApiProperty({ required: true, type: SchemaTypes.String })
   @IsEmail()
